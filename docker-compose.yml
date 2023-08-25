@@ -9,7 +9,7 @@ services:
     build:
       context: .
     ports:
-      - "8080:8000"  # Expose the application on port 8080
+      - "8080:8000"  
   nginx:
     build: ./nginx
     volumes:
