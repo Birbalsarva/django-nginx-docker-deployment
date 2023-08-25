@@ -6,18 +6,15 @@ services:
       - static:/static
     env_file:
       - .env
-    build:
-      context: .
+    image: birbalsarva/django_gunicorn:latest 
     ports:
       - "8080:8000"  
   nginx:
     build: ./nginx
     volumes:
       - static:/static
+    image: birbalsarva/nginx:latest  
     ports:
       - "80:80"
     depends_on:
       - django_gunicorn
-
-volumes:
-  static:
